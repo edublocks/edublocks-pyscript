@@ -7,4 +7,4 @@ def sleep(seconds):
 		now = time.time()
 
 time.sleep = sleep
-input = prompt
+__builtins__["input"] = prompt
