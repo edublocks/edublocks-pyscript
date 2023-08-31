@@ -50,8 +50,8 @@ def _default_cfg():
     return {
         # "width" : 0.5,               # Screen
         # "height" : 0.75,
-        "canvwidth": 300,
-        "canvheight": 480,
+        "canvwidth": 380,
+        "canvheight": 380,
         # "leftright": None,
         # "topbottom": None,
         "mode": "standard",
