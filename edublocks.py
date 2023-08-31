@@ -1,5 +1,8 @@
 import time
 from js import prompt
+import pyodide_http
+
+pyodide_http.patch_all()  # Patch all libraries
 
 def sleep(seconds):
 	start = now = time.time()
