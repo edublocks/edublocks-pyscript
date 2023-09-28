@@ -440,5 +440,5 @@ class Turtle {
 }
 
 function getTurtle(id) {
-    return new Turtle(800, 600, id);
+    return new Turtle(380, 380, id);
 }
