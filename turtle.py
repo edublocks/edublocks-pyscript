@@ -25,31 +25,31 @@ class Turtle:
     async def circle(self, radius):
         await self.turtle.circle(radius, 360)
 
-    def width(self, width):
+    async def width(self, width):
         self.turtle.width(width)
 
-    def color(self, *args):
+    async def color(self, *args):
         self.turtle.color(*args)
 
-    def pencolor(self, *args):
+    async def pencolor(self, *args):
         self.turtle.color(*args)
 
-    def fillcolor(self, *args):
+    async def fillcolor(self, *args):
         self.turtle.fillcolor(*args)
 
-    def begin_fill(self):
+    async def begin_fill(self):
         self.turtle.begin_fill()
 
-    def end_fill(self):
+    async def end_fill(self):
         self.turtle.end_fill()
 
-    def penup(self):
+    async def penup(self):
         self.turtle.penup()
 
-    def pendown(self):
+    async def pendown(self):
         self.turtle.pendown()
 
-    def speed(self, speed):
+    async def speed(self, speed):
         self.turtle.speed(speed)
 
 class Screen:
