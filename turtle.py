@@ -1,11 +1,11 @@
-import js
+from pyscript import document, window
 
 class Turtle:
     def __init__(self):
-        canvas = js.document.createElement("canvas")
+        canvas = document.createElement("canvas")
         canvas.id = "canvas"
-        js.document.body.appendChild(canvas)
-        self.turtle = js.getTurtle("canvas")
+        document.body.appendChild(canvas)
+        self.turtle = window.getTurtle("canvas")
 
     async def forward(self, distance):
         await self.turtle.forward(distance)
@@ -54,7 +54,7 @@ class Turtle:
 
 class Screen:
     def __init__(self):
-        self.turtle = js.getTurtle("canvas")
+        self.turtle = window.getTurtle("canvas")
         
     def bgcolor(self, *args):
         self.turtle.bgcolor(*args)
