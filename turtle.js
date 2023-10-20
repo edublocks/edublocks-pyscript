@@ -229,10 +229,6 @@ class Turtle {
         this.canvas.style.backgroundColor = bgcolor;
     }
 
-    color(...args) {
-        this.pencolor(...args);
-    }
-
     fillcolor(...args) {
         let fillColor;
         if (typeof (args[0]) == "string") {
