@@ -10,8 +10,8 @@ _colors = [
 
 class _Chart:
     def __init__(self, type, _plot_options={}):
-        self.title = None
-        self.x_labels = None
+        self.title = ""
+        self.x_labels = ""
         self._data = []
         self._type = type
         self._plot_options = _plot_options
