@@ -16,9 +16,7 @@ class _Chart:
         self._type = type
         self._plot_options = _plot_options
         
-        does_container_exist = document.getElementById("chart")
-
-        if does_container_exist == None:
+        if document.getElementById("chart") == None:
             container = document.createElement("chart")
             container.id = "chart"
             document.body.appendChild(container)
