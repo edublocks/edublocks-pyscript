@@ -1,4 +1,4 @@
-from pyscript import document, window
+from pyscript import window
 import json
 
 _colors = [
@@ -15,11 +15,6 @@ class _Chart:
         self._data = []
         self._type = type
         self._plot_options = _plot_options
-        
-        if document.getElementById("chart") == None:
-            container = document.createElement("chart")
-            container.id = "chart"
-            document.body.appendChild(container)
 
     def add(self, name, data):
         self._data.append({
