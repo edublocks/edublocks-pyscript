@@ -58,8 +58,6 @@ class _Chart:
             "plotOptions": self._plot_options
         }
 
-        print(json.dumps(options))
-
         window.renderChart(json.dumps(options))
 
 class Line(_Chart):
