@@ -52,6 +52,9 @@ class Turtle:
     async def speed(self, speed):
         self.turtle.speed(speed)
 
+    async def shape(self, shape):
+        self.turtle.shape(shape)
+
 class Screen:
     def __init__(self):
         self.turtle = window.getTurtle("canvas")

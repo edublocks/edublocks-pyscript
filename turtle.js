@@ -1,10 +1,32 @@
 // With thanks to RyoFuji2005 (https://github.com/RyoFuji2005/TurtleGraphics)
 
-const SHAPE = [
+const TURTLE = [
     [0, 14], [-2, 12], [-1, 8], [-4, 5], [-7, 7], [-9, 6],
     [-6, 3], [-7, -1], [-5, -5], [-8, -8], [-6, -10], [-4, -7],
     [0, -9], [4, -7], [6, -10], [8, -8], [5, -5], [7, -1],
     [6, 3], [9, 6], [7, 7], [4, 5], [1, 8], [2, 12], [0, 14]
+];
+
+const CLASSIC = [
+    [0, 14],
+    [-7, 0],
+    [7, 0],
+];
+
+const CIRCLE = [
+    [10, 0], [9.798, 1.961], [9.21, 3.826], [8.246, 5.588], [6.93, 7.141],
+    [5.3, 8.481], [3.404, 9.607], [1.299, 10.517], [-1.299, 10.517], [-3.404, 9.607],
+    [-5.3, 8.481], [-6.93, 7.141], [-8.246, 5.588], [-9.21, 3.826], [-9.798, 1.961],
+    [-10, 0], [-9.798, -1.961], [-9.21, -3.826], [-8.246, -5.588], [-6.93, -7.141],
+    [-5.3, -8.481], [-3.404, -9.607], [-1.299, -10.517], [1.299, -10.517], [3.404, -9.607],
+    [5.3, -8.481], [6.93, -7.141], [8.246, -5.588], [9.21, -3.826], [9.798, -1.961], [10, 0]
+];
+
+const SQUARE = [
+    [-10, -10],
+    [-10, 10],
+    [10, 10],
+    [10, -10]
 ];
 
 const SPEED_TABLE = {
@@ -28,6 +50,8 @@ class Turtle {
 
         this.canvas.width = this.cvWidth;
         this.canvas.height = this.cvHeight;
+        
+        this.turtleShape = CLASSIC;
 
         this.context = this.canvas.getContext('2d');
         this.context.lineCap = 'round';
@@ -260,6 +284,9 @@ class Turtle {
     }
 
     speed(speed) {
+        if (speed === 0){
+            speed = 10
+        }
         this.turtleSpeed = speed;
         this.delayTime = SPEED_TABLE[this.turtleSpeed];
     }
@@ -284,12 +311,39 @@ class Turtle {
         const SIN = Math.sin(RADIAN);
         this.context.beginPath();
         this.context.lineWidth = this.turtleExpand;
-        SHAPE.forEach(element => this.context.lineTo(
+        this.turtleShape.forEach(element => this.context.lineTo(
             centerX + (element[0] * COS - element[1] * SIN) * turtleExpand,
             centerY - (element[0] * SIN + element[1] * COS) * turtleExpand));
         this.context.fill();
         this.context.stroke();
         this.context.lineWidth = this.penSize;
+    }
+
+    shape(shapeName) {
+        switch (shapeName) {
+            case "classic":
+                this.turtleShape = CLASSIC;
+                break;
+            case "turtle":
+                this.turtleShape = TURTLE;
+                break;
+            case "circle":
+                this.turtleShape = CIRCLE;
+                break;
+            case "square":
+                this.turtleShape = SQUARE;
+                break;
+            case "triangle":
+                this.turtleShape = CLASSIC;
+                break;
+            case "arrow":
+                this.turtleShape = CLASSIC;
+                break;
+        }
+        
+        if (this.turtleVisible) {
+            this.drawTurtle();
+        }
     }
 
     turtlesize(stretch) {
