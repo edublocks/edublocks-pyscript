@@ -4,7 +4,7 @@ class Turtle:
     def __init__(self):
         canvas = document.createElement("canvas")
         canvas.id = "canvas"
-        document.body.appendChild(canvas)
+        document.body.prepend(canvas)
         self.turtle = window.getTurtle("canvas")
 
     async def forward(self, distance):
