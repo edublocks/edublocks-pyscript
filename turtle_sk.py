@@ -73,5 +73,5 @@ class Screen:
         screens.append(self.reference)
         window.turtle.execute(f'{self.reference} = Screen()')
         
-    async def bgcolor(self, *args):
-        await window.turtle.execute(f'{self.reference}.bgcolor("{get_color(args)}")')
+    def bgcolor(self, *args):
+        window.turtle.execute(f'{self.reference}.bgcolor("{get_color(args)}")')
