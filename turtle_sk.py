@@ -23,55 +23,55 @@ class Turtle:
             window.turtle.execute(f'{self.reference} = Turtle()')
 
     async def forward(self, distance):
-        await window.turtle.execute(f'{self.reference}.forward({distance})')
+        return await window.turtle.execute(f'{self.reference}.forward({distance})')
 
     async def left(self, angle):
-        await window.turtle.execute(f'{self.reference}.left({angle})')
+        return await window.turtle.execute(f'{self.reference}.left({angle})')
 
     async def backward(self, distance):
-        await window.turtle.execute(f'{self.reference}.backward({distance})')
+        return await window.turtle.execute(f'{self.reference}.backward({distance})')
 
     async def right(self, angle):
-        await window.turtle.execute(f'{self.reference}.right({angle})')
+        return await window.turtle.execute(f'{self.reference}.right({angle})')
 
     async def goto(self, x, y):
-        await window.turtle.execute(f'{self.reference}.goto({x}, {y})')
+        return await window.turtle.execute(f'{self.reference}.goto({x}, {y})')
 
     async def circle(self, radius):
-        await window.turtle.execute(f'{self.reference}.circle({radius})')
+        return await window.turtle.execute(f'{self.reference}.circle({radius})')
 
     async def width(self, width):
-        await window.turtle.execute(f'{self.reference}.width({width})')
+        return await window.turtle.execute(f'{self.reference}.width({width})')
 
     async def color(self, *args):        
-        await window.turtle.execute(f'{self.reference}.color("{get_color(args)}")')
+        return await window.turtle.execute(f'{self.reference}.color("{get_color(args)}")')
 
     async def pencolor(self, *args):
-        await window.turtle.execute(f'{self.reference}.pencolor("{get_color(args)}")')
+        return await window.turtle.execute(f'{self.reference}.pencolor("{get_color(args)}")')
 
     async def fillcolor(self, *args):
-        await window.turtle.execute(f'{self.reference}.fillcolor("{get_color(args)}")')
+        return await window.turtle.execute(f'{self.reference}.fillcolor("{get_color(args)}")')
 
     async def begin_fill(self):
-        await window.turtle.execute(f'{self.reference}.begin_fill()')
+        return await window.turtle.execute(f'{self.reference}.begin_fill()')
 
     async def end_fill(self):
-        await window.turtle.execute(f'{self.reference}.end_fill()')
+        return await window.turtle.execute(f'{self.reference}.end_fill()')
 
     async def penup(self):
-        await window.turtle.execute(f'{self.reference}.penup()')
+        return await window.turtle.execute(f'{self.reference}.penup()')
 
     async def pendown(self):
-        await window.turtle.execute(f'{self.reference}.pendown()')
+        return await window.turtle.execute(f'{self.reference}.pendown()')
 
     async def speed(self, speed):
-        await window.turtle.execute(f'{self.reference}.speed({speed})')
+        return await window.turtle.execute(f'{self.reference}.speed({speed})')
 
     async def shape(self, shape):
-        await window.turtle.execute(f'{self.reference}.shape("{shape}")')
+        return await window.turtle.execute(f'{self.reference}.shape("{shape}")')
 
     async def write(self, text, move=False, align="left", font=("Arial", 8, "normal")):
-        await window.turtle.execute(f'{self.reference}.write("{text}", move={move}, align="{align}", font=("{font[0]}", {font[1]}, "{font[2]}"))')
+        return await window.turtle.execute(f'{self.reference}.write("{text}", move={move}, align="{align}", font=("{font[0]}", {font[1]}, "{font[2]}"))')
 
 class Screen:
     def __init__(self):
@@ -86,10 +86,10 @@ class Screen:
 
         
     async def bgcolor(self, *args):
-        await window.turtle.execute(f'{self.reference}.bgcolor("{get_color(args)}")')
+        return await window.turtle.execute(f'{self.reference}.bgcolor("{get_color(args)}")')
         
     async def setup(self, w, h):
-        await window.turtle.execute(f'{self.reference}.setup({w}, {h})')
+        return await window.turtle.execute(f'{self.reference}.setup({w}, {h})')
 
 _classes = [
     "Turtle",
